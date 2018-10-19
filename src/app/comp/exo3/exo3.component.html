@@ -1,0 +1,14 @@
+<div class="row">
+    <div class="col-md-6">
+        <label class="form-check-label" for="floor">Nombre d'étages souhaitez pour ton sapin</label>
+        <input class="form-control" myNumberOnly type="number" name="floor" placeholder="Enter Value" [(ngModel)]="floor">
+        <label class="form-check-label" for="choice">1: sapin plein -- 2: sapin vide -- 3: sapin couché</label>
+        <input class="form-control" myNumberOnly type="number" name="choice" placeholder="Enter Value" [(ngModel)]="choice">
+
+
+        <button class="btn btn-primary input-group-btn" type="submit" (click)="validerSaisie(floor, choice)">Valider</button>
+    </div>
+
+<div style="word-spacing: 5px" class="col-12" [innerHTML]="treeFinal"></div>
+
+</div>

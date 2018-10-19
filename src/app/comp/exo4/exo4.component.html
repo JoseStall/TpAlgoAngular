@@ -1,0 +1,15 @@
+<div class="row">
+  <h2 class="text-center">Devine le nombre magique, compris entre 1 et 100.</h2>
+  <div class="col-md-6">
+
+    <label class="form-check-label" for="floor">Proposition n° {{ nbReponse}} </label>
+    <input class="form-control" myNumberOnly type="number" name="propo" placeholder="Enter Value" [(ngModel)]="propo">
+
+    <button class="btn btn-primary input-group-btn" type="submit" (click)="validerSaisie(propo)">Valider</button>
+  </div>
+
+  <div class="col-md-6">
+    <div [innerHTML]="htmlContent"></div>
+    <button *ngIf="isWin" class="btn btn-primary input-group-btn" type="submit" (click)="playTheGame()">Rejouer</button>
+  </div>
+</div>

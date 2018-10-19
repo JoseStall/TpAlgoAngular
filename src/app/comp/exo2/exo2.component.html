@@ -1,0 +1,18 @@
+<div class="row">
+    <div class="col-md-6">
+        <label class="form-check-label" for="num">Nombre de chiffres à rentrer</label>
+        <input class="form-control" myNumberOnly type="number" name="num" placeholder="Enter Value" [(ngModel)]="num">
+        <button class="btn btn-primary input-group-btn my-3" type="submit" (click)="validerSaisie()">Valider</button>
+
+    </div>
+    <div class="col-md-6" *ngIf="this.lists.length>0">
+        <label class="form-check-label" for="listNum">Ici les chiffres que tu souhaites calculer</label>
+        <input class="form-control" type="number" name="listNum" *ngFor="let list of lists; let i=index" (keyup.enter)="saisie(i,$event);"
+            value="{{ list }}">
+    </div>
+    <div class="col text-center my-5" *ngIf="this.lists.length > 0">
+        <button class="btn btn-primary" (click)="calculer()">Calculer la somme et la moyenne</button>
+        <div class="text-center" *ngIf="somme!=0">La somme de ton array est de : {{ somme }} || La moyenne de ton array
+            est de : {{ moyenne }} </div>
+    </div>
+</div>
